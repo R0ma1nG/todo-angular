@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Constants} from '../../../constants';
-import {AuthenticationService} from '../../../services/authentication.service';
+import {AuthenticationService} from '../../services/authentication.service';
 
 interface ROUTE {
   icon: string;
@@ -20,7 +20,7 @@ export class NavComponent implements OnInit {
   appRoutes: ROUTE[] = [
     {
       icon: 'dashboard',
-      route: 'dashboard',
+      route: '',
       title: 'Dashboard',
     },
     {

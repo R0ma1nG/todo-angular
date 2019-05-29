@@ -6,6 +6,10 @@ import { NavComponent } from './components/nav/nav.component';
 import {AngularMaterialModule} from '../shared/angular-material.module';
 import {AuthenticationComponent} from './components/authentication/authentication.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ProfileComponent } from './components/profile/profile.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { HelpComponent } from './components/help/help.component';
 
 @NgModule({
   imports: [
@@ -15,7 +19,15 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [NavigationBarComponent, NavComponent, AuthenticationComponent],
+  declarations: [
+    NavigationBarComponent,
+    NavComponent,
+    AuthenticationComponent,
+    ProfileComponent,
+    SettingsComponent,
+    DashboardComponent,
+    HelpComponent
+  ],
   providers: [],
   exports: [NavComponent]
 })
