@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {User} from '../models/user';
 import {BehaviorSubject, Observable} from 'rxjs';
+import * as firebase from 'firebase';
 
 @Injectable({providedIn: 'root'})
 export class AuthenticationService {
@@ -16,13 +17,41 @@ export class AuthenticationService {
     return this.currentUserSubject.value;
   }
 
-  login(username: string, password: string) {
-    const user = new User('1', username, password);
-    localStorage.setItem('currentUser', JSON.stringify(user));
-    this.currentUserSubject.next(user);
+  createNewUser(email: string, password: string) {
+    return new Promise(
+      (resolve, reject) => {
+        firebase.auth().createUserWithEmailAndPassword(email, password).then(
+          () => {
+            resolve();
+          },
+          (error) => {
+            reject(error);
+          }
+        );
+      }
+    );
+  }
+
+  login(email: string, password: string) {
+    return new Promise(
+      (resolve, reject) => {
+        firebase.auth().signInWithEmailAndPassword(email, password).then(
+          () => {
+            const usr = firebase.auth().currentUser;
+            const user = new User(usr.uid, usr.email);
+            localStorage.setItem('currentUser', JSON.stringify(user));
+            this.currentUserSubject.next(user);
+            resolve();
+          },
+          (error) => {
+            reject(error);
+          }
+        );
+      });
   }
 
   logout() {
+    firebase.auth().signOut();
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
   }

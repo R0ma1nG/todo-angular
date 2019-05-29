@@ -5,12 +5,15 @@ import {AppRoutingModule} from '../app-routing.module';
 import { NavComponent } from './components/nav/nav.component';
 import {AngularMaterialModule} from '../shared/angular-material.module';
 import {AuthenticationComponent} from './components/authentication/authentication.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
     AppRoutingModule,
     AngularMaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [NavigationBarComponent, NavComponent, AuthenticationComponent],
   providers: [],

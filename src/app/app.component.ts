@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import * as firebase from 'firebase';
+import {firebaseConfig} from './firebaseConfig';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo-angular';
+
+  constructor() {
+    firebase.initializeApp(firebaseConfig);
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthenticationService} from '../../../services/authentication.service';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-authentication',
@@ -9,6 +10,11 @@ import {AuthenticationService} from '../../../services/authentication.service';
 export class AuthenticationComponent implements OnInit {
 
   private authenticationService: AuthenticationService;
+  user = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl('')
+  });
+
 
   constructor(authService: AuthenticationService) {
     this.authenticationService = authService;
@@ -18,6 +24,6 @@ export class AuthenticationComponent implements OnInit {
   }
 
   login() {
-    this.authenticationService.login('test', 'pwd');
+    this.authenticationService.login(this.user.value.email, this.user.value.password);
   }
 }
