@@ -1,0 +1,12 @@
+.login-div {
+  height: 100%;
+  display: flex;
+
+  .login-form {
+    margin: auto;
+
+    button {
+      float: right;
+    }
+  }
+}

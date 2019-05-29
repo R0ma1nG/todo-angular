@@ -1,0 +1,45 @@
+<mat-sidenav-container>
+
+  <mat-sidenav #sidenav mode="over">
+
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <h2 class="toolbar-title"> {{ appName }} </h2>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <mat-nav-list>
+
+      <a mat-list-item routerLink="/" style="height: 0;"></a>
+
+      <a *ngFor="let item of appRoutes"
+         mat-list-item
+         (click)="sidenav.close()"
+         [routerLink]="[item.route]"
+         routerLinkActive="list-item-active">
+        <mat-icon matListIcon class="app-nav-list-icon"> {{ item.icon }} </mat-icon>
+        {{item.title}}
+      </a>
+
+      <mat-divider></mat-divider>
+
+      <a *ngFor="let item of otherRoutes"
+         mat-list-item
+         (click)="sidenav.close()"
+         [routerLink]="[item.route]"
+         routerLinkActive="list-item-active">
+        <mat-icon matListIcon class="app-nav-list-icon"> {{ item.icon }} </mat-icon>
+        {{item.title}}
+      </a>
+
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-navigation-bar *ngIf="isAuthenticated()" (toggleSidenav)="sidenav.toggle()"></app-navigation-bar>
+    <app-authentication *ngIf="!isAuthenticated()"></app-authentication>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
