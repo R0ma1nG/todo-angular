@@ -1,11 +1,18 @@
 div {
+  margin: 2%;
 
+  display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 
   mat-card {
-    margin: 8px;
-    min-width: 250px;
-    max-width: 500px;
+    margin-bottom: 2%;
   }
+}
+
+.fab {
+  position: fixed;
+  right: 4%;
+  bottom: 4%;
 }
 

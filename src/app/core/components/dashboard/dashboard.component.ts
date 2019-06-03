@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {DashboardService} from '../../services/dashboard.service';
 import {Todo} from '../../models/todo';
+import {TodoService} from '../../services/todo.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,9 +11,14 @@ export class DashboardComponent implements OnInit {
 
   private todos: Todo[];
 
-  constructor(private dashboardService: DashboardService) { }
+  constructor(private todoService: TodoService) { }
 
   ngOnInit() {
-    this.todos = this.dashboardService.getTodos();
+    this.todos = this.todoService.getAll();
+  }
+
+  newTodoList() {
+    console.log('new todo list clicked');
+    this.todoService.add();
   }
 }
