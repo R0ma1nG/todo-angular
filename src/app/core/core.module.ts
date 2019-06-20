@@ -10,6 +10,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HelpComponent } from './components/help/help.component';
+import {GridsterModule} from 'angular-gridster2';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { HelpComponent } from './components/help/help.component';
     AngularMaterialModule,
     BrowserAnimationsModule,
     FormsModule,
+    GridsterModule,
     ReactiveFormsModule
   ],
   declarations: [

@@ -1,8 +1,9 @@
 <div>
-  <mat-card fxFlex="0 1 33" fxFlex.sm="0 1 49" fxFlex.xs="0 1 100" *ngFor="let todo of todos">
-    <h3>{{ todo.title }}</h3>
-    <p>{{ todo.description }}</p>
-  </mat-card>
+  <gridster [options]="options">
+    <gridster-item [item]="item" *ngFor="let item of dashboard">
+      <p>{{ item.title }} - {{ item.id }}</p>
+    </gridster-item>
+  </gridster>
 </div>
 <button mat-fab aria-label="Add a new todo list" class="fab" (click)="newTodoList()">
   <mat-icon>add</mat-icon>

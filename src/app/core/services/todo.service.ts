@@ -3,13 +3,10 @@ import {Todo} from '../models/todo';
 
 @Injectable({providedIn: 'root'})
 export class TodoService {
-
-  i = 0;
   todos = [
-    new Todo(this.i++, 'Todo 1', 'todo 1 description'),
-    new Todo(this.i++, 'Todo 2', 'todo 2 description, the description is longer than the first one.')
+    new Todo('Todo 1', 'description', 0, 0, 2, 1),
+    new Todo('Todo 2', 'description')
   ];
-
 
   constructor() {}
 
@@ -18,6 +15,6 @@ export class TodoService {
   }
 
   add() {
-    this.todos.push(new Todo(this.i++, `Todo ${this.i}`, 'description'));
+    this.todos.push(new Todo('Todo', 'description'));
   }
 }
