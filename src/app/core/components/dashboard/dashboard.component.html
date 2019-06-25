@@ -1,7 +1,10 @@
 <div>
   <gridster [options]="options" fxFlex="100">
     <gridster-item [item]="item" *ngFor="let item of dashboard">
-      <app-todo-card [item]="item"></app-todo-card>
+      <app-todo-card
+        [item]="item"
+        fxLayout="column" fxLayoutAlign="space-between"
+      ></app-todo-card>
     </gridster-item>
   </gridster>
 </div>

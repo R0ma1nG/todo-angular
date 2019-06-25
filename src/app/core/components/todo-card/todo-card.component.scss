@@ -2,8 +2,12 @@
 
 $primary: map-get($candy-app-theme, primary);
 
+:host {
+  height: 100%;
+  overflow: scroll;
+}
+
 .card-header {
-  display: flex;
 
   h4 {
     width: calc(100% - 64px);
@@ -16,23 +20,20 @@ $primary: map-get($candy-app-theme, primary);
 }
 
 .card-content {
-  margin: 0.5em;
+  margin: 0.5rem;
 }
 
 .footer {
   width: 100%;
-  display: flex;
-  margin: auto;
-  position: sticky;
-  bottom: 0;
+  margin-bottom: 0.75rem;
 
   form {
     margin: auto;
 
     input {
-      border-radius: 5em;
+      border-radius: 5rem;
       border: 1px solid gray;
-      padding: 0.25em;
+      padding: 0.5rem 1rem;
     }
 
     input:active,

@@ -4,7 +4,7 @@ import {Todo} from '../models/todo';
 @Injectable({providedIn: 'root'})
 export class TodoService {
   todos = [
-    new Todo('Todo 1', 'description', 0, 0, 2, 1, ['tache 1', 'tache 2']),
+    new Todo('Todo 1', 'Ideoque fertur neminem aliquando ob haec vel similia poenae addictum oblato de more elogio revocari iussisse, quod inexorabiles quoque principes factitarunt.', 0, 0, 2, 1, ['tache 1', 'tache 2']),
     new Todo('Todo 2', 'description')
   ];
 

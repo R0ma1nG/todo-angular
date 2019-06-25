@@ -1,4 +1,4 @@
-<div class="card-header">
+<div class="card-header" fxLayout="row">
   <h4>{{ item.title }}</h4>
   <button
     mat-button class="remove-button"
@@ -9,17 +9,13 @@
     <mat-icon>delete</mat-icon>
   </button>
 </div>
-<div
-  class="card-content"
-  (mousedown)="$event.stopPropagation()"
-  (touchstart)="$event.stopPropagation()"
->
+<div class="card-content">
   <p>{{ item.description}}</p>
   <ul>
     <li *ngFor="let todoItem of item.itemList">{{ todoItem }}</li>
   </ul>
 </div>
-<div class="footer">
+<div class="footer" fxLayout="row">
   <form class="input" (submit)="addTodoItem()">
     <input
       [(ngModel)]="newTodoItemString"
