@@ -27,22 +27,19 @@ export class DashboardComponent implements OnInit {
         enabled: true
       },
       maxCols: 4,
-      minCols: 4
+      minCols: 4,
+      swap: true
     };
 
     this.dashboard = this.todoService.getAll();
   }
 
-  newTodoList() {
+  newTodo() {
     console.log('new todo list clicked');
     this.todoService.add();
   }
 
   changedOptions() {
     this.options.api.optionsChanged();
-  }
-
-  removeItem(item) {
-    this.dashboard.splice(this.dashboard.indexOf(item), 1);
   }
 }

@@ -1,8 +1,22 @@
 div {
   gridster {
-    display: flex;
     height: calc(100vh - 64px);
     flex-direction: column;
+    background: whitesmoke;
+
+    gridster-item {
+      border-radius: 5px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+
+    gridster-item:hover {
+      cursor: grab;
+    }
+
+    gridster-item:active,
+    gridster-item:focus {
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15), 0 4px 4px rgba(0,0,0,0.15);
+    }
   }
 }
 
@@ -12,4 +26,3 @@ div {
   right: 4%;
   bottom: 4%;
 }
-

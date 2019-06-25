@@ -1,0 +1,31 @@
+<div class="card-header">
+  <h4>{{ item.title }}</h4>
+  <button
+    mat-button class="remove-button"
+    (click)="removeItem(item)"
+    (mousedown)="$event.stopPropagation()"
+    (touchstart)="$event.stopPropagation()"
+  >
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>
+<div
+  class="card-content"
+  (mousedown)="$event.stopPropagation()"
+  (touchstart)="$event.stopPropagation()"
+>
+  <p>{{ item.description}}</p>
+  <ul>
+    <li *ngFor="let todoItem of item.itemList">{{ todoItem }}</li>
+  </ul>
+</div>
+<div class="footer">
+  <form class="input" (submit)="addTodoItem()">
+    <input
+      [(ngModel)]="newTodoItemString"
+      placeholder="Aa" name="AddTodoItemInput"
+      (mousedown)="$event.stopPropagation()"
+      (touchstart)="$event.stopPropagation()"
+    >
+  </form>
+</div>

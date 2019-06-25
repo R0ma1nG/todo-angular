@@ -6,11 +6,13 @@ export class Todo implements GridsterItem {
   id: string;
   title: string;
   description: string;
+  itemList: Array<string>;
 
-  constructor(title, description, x = 0, y = 0, rows = 1, cols = 1) {
+  constructor(title, description, x = 0, y = 0, rows = 1, cols = 1, items = []) {
     this.id = UUID.UUID();
     this.title = title;
     this.description = description;
+    this.itemList = items;
     this.x = x;
     this.y = y;
     this.cols = cols;

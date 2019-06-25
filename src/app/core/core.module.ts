@@ -11,6 +11,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HelpComponent } from './components/help/help.component';
 import {GridsterModule} from 'angular-gridster2';
+import { TodoCardComponent } from './components/todo-card/todo-card.component';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import {GridsterModule} from 'angular-gridster2';
     ProfileComponent,
     SettingsComponent,
     DashboardComponent,
-    HelpComponent
+    HelpComponent,
+    TodoCardComponent
   ],
   providers: [],
   exports: [NavComponent]

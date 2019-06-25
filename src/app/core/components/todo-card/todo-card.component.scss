@@ -1,0 +1,45 @@
+@import "../../../../styles";
+
+$primary: map-get($candy-app-theme, primary);
+
+.card-header {
+  display: flex;
+
+  h4 {
+    width: calc(100% - 64px);
+    text-align: center;
+  }
+
+  button {
+    width: 64px;
+  }
+}
+
+.card-content {
+  margin: 0.5em;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  margin: auto;
+  position: sticky;
+  bottom: 0;
+
+  form {
+    margin: auto;
+
+    input {
+      border-radius: 5em;
+      border: 1px solid gray;
+      padding: 0.25em;
+    }
+
+    input:active,
+    input:focus {
+      outline: none;
+      border: 1.5px solid mat-color($primary);
+    }
+  }
+}
+

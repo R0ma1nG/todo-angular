@@ -1,10 +1,10 @@
 <div>
-  <gridster [options]="options">
+  <gridster [options]="options" fxFlex="100">
     <gridster-item [item]="item" *ngFor="let item of dashboard">
-      <p>{{ item.title }} - {{ item.id }}</p>
+      <app-todo-card [item]="item"></app-todo-card>
     </gridster-item>
   </gridster>
 </div>
-<button mat-fab aria-label="Add a new todo list" class="fab" (click)="newTodoList()">
+<button mat-fab aria-label="Add a new todo list" class="fab" (click)="newTodo()">
   <mat-icon>add</mat-icon>
 </button>
